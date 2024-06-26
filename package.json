@@ -4,14 +4,15 @@
   "description": "bksdemohub_data",
   "main": "app.js",
   "scripts": {
-    "start" : "node app.js",
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongodb": "^6.7.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
