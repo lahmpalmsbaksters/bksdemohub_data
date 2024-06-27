@@ -1,17 +1,21 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient } = require("mongodb");
+require("dotenv").config();
 
-const url = 'mongodb://pr9fmcgvoc:pr9fmcgvoc12345@52.77.210.199:27017/';
-const dbName = 'bksdemohub_sondhana';
+const url = process.env.MONGODB_URI;
+const dbName = process.env.DATABASE_NAME;
 
 let db;
 
 async function connectToDatabase() {
   if (db) return db;
 
-  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
   await client.connect();
   db = client.db(dbName);
-  console.log('Connected to database');
+  console.log("Connected to database");
   return db;
 }
 
